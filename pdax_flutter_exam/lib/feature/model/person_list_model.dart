@@ -13,10 +13,10 @@ String personListModelToJson(PersonListModel data) =>
 @freezed
 class PersonListModel with _$PersonListModel {
   const factory PersonListModel({
-    required String status,
-    required int code,
-    required int total,
-    required List<Datum> data,
+    String? status,
+    int? code,
+    int? total,
+    List<Datum>? data,
   }) = _PersonListModel;
 
   factory PersonListModel.fromJson(Map<String, dynamic> json) =>
@@ -26,16 +26,16 @@ class PersonListModel with _$PersonListModel {
 @freezed
 class Datum with _$Datum {
   const factory Datum({
-    required int id,
-    required String firstname,
-    required String lastname,
-    required String email,
-    required String phone,
-    required DateTime birthday,
-    required String gender,
-    required Address address,
-    required String website,
-    required String image,
+    int? id,
+    String? firstname,
+    String? lastname,
+    String? email,
+    String? phone,
+    DateTime? birthday,
+    String? gender,
+    Address? address,
+    String? website,
+    String? image,
   }) = _Datum;
 
   factory Datum.fromJson(Map<String, dynamic> json) => _$DatumFromJson(json);
@@ -44,16 +44,14 @@ class Datum with _$Datum {
 @freezed
 class Address with _$Address {
   const factory Address({
-    required int id,
-    required String street,
-    required String streetName,
-    required String buildingNumber,
-    required String city,
-    required String zipcode,
-    required String country,
-    required String countyCode,
-    required double latitude,
-    required double longitude,
+    String? streetName,
+    String? buildingNumber,
+    String? city,
+    String? zipcode,
+    String? country,
+    String? countyCode,
+    double? latitude,
+    double? longitude,
   }) = _Address;
 
   factory Address.fromJson(Map<String, dynamic> json) =>
