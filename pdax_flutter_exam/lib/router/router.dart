@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pdax_flutter_exam/feature/presentation/screens/person_list_screen.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'router.g.dart';
@@ -12,8 +13,9 @@ List<GoRoute> get routes => [
       // ================= Profile List Screen ================= //
       GoRoute(
         name: 'ProfileListScreen',
-        path: '/profile_list',
-        // builder: (context, state) => const ProfileList(),
+        path: '/',
+        redirect: (context, state) => '/',
+        builder: (context, state) => const PersonListScreen(),
       ),
     ];
 
@@ -21,6 +23,6 @@ List<GoRoute> get routes => [
 GoRouter goRoute(GoRouteRef ref) {
   return GoRouter(
     routes: routes,
-    initialLocation: '/profile_list',
+    initialLocation: '/',
   );
 }
