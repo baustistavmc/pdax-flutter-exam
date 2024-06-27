@@ -34,5 +34,19 @@ final personListProvider = NotifierProvider<PersonList, List<Datum>>.internal(
 );
 
 typedef _$PersonList = Notifier<List<Datum>>;
+String _$counterHash() => r'4229aed57e9a5eb3d6835af9aa089d06dae42df7';
+
+/// See also [Counter].
+@ProviderFor(Counter)
+final counterProvider = NotifierProvider<Counter, int>.internal(
+  Counter.new,
+  name: r'counterProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$counterHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef _$Counter = Notifier<int>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

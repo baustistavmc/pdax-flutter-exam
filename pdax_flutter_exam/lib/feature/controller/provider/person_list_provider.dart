@@ -28,3 +28,16 @@ class PersonList extends _$PersonList {
     state.addAll(values);
   }
 }
+
+// Counter provider to determine how many times request GET api is called
+@Riverpod(keepAlive: true)
+class Counter extends _$Counter {
+  @override
+  int build() {
+    return 1;
+  }
+
+  Future<void> add() async {
+    state += 1;
+  }
+}
