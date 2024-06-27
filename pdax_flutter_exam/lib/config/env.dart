@@ -1,7 +1,6 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class Environment {
-  // Relase mode
   static String get fileName => ".env.production";
 
   // API URL
