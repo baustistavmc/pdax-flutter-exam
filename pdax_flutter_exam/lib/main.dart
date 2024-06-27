@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pdax_flutter_exam/config/env.dart';
+import 'package:pdax_flutter_exam/config/providers/dimension_provider/dimension_provider.dart';
 import 'package:pdax_flutter_exam/config/themes.dart';
 import 'package:pdax_flutter_exam/router/router.dart';
+import 'package:pdax_flutter_exam/config/dimensions.dart' as dimensions;
 
 Future<void> main() async {
   //
@@ -27,6 +29,17 @@ class MyApp extends ConsumerWidget {
     //
     // ==================== Variables ==================== //
     final goRouter = ref.watch(goRouteProvider);
+
+    final screenSize = MediaQuery.of(context).size;
+
+    // To determine the device screen size and set the state
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (screenSize.width < dimensions.dimensionMobile) {
+        ref.read(dimensionControllerProvider.notifier).isMobile();
+      } else {
+        ref.read(dimensionControllerProvider.notifier).isDesktop();
+      }
+    });
 
     // ==================== Screen ==================== //
     return MaterialApp.router(
