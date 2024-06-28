@@ -13,7 +13,7 @@ Widget buildMobileLoadingSkeleton() {
         children: [
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -22,7 +22,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -31,7 +31,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -40,7 +40,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -49,7 +49,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -58,7 +58,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -67,7 +67,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -76,7 +76,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -85,7 +85,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -94,7 +94,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -103,7 +103,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
@@ -112,7 +112,7 @@ Widget buildMobileLoadingSkeleton() {
           const SizedBox(height: 24),
           Container(
             width: double.infinity,
-            height: 64,
+            height: 48,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
               color: Colors.white,
