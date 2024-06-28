@@ -59,6 +59,8 @@ Map<String, dynamic> _$$DatumImplToJson(_$DatumImpl instance) =>
 
 _$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
     _$AddressImpl(
+      id: (json['id'] as num?)?.toInt(),
+      street: json['street'] as String?,
       streetName: json['streetName'] as String?,
       buildingNumber: json['buildingNumber'] as String?,
       city: json['city'] as String?,
@@ -71,6 +73,8 @@ _$AddressImpl _$$AddressImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AddressImplToJson(_$AddressImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
+      'street': instance.street,
       'streetName': instance.streetName,
       'buildingNumber': instance.buildingNumber,
       'city': instance.city,

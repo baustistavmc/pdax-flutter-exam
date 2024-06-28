@@ -44,6 +44,8 @@ class Datum with _$Datum {
 @freezed
 class Address with _$Address {
   const factory Address({
+    int? id,
+    String? street,
     String? streetName,
     String? buildingNumber,
     String? city,
@@ -54,6 +56,9 @@ class Address with _$Address {
     double? longitude,
   }) = _Address;
 
-  factory Address.fromJson(Map<String, dynamic> json) =>
-      _$AddressFromJson(json);
+  factory Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson({
+        ...json,
+        'countyCode': json['county_code']
+            ?.toString(), // Check for null and convert to String
+      });
 }
