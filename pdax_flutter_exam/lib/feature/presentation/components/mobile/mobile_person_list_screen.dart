@@ -54,6 +54,20 @@ class _MobilePersonListState extends ConsumerState<MobilePersonListScreen> {
     // =================== UI =================== //
     return Scaffold(
       backgroundColor: color_constants.background,
+
+      // =================== App Bar =================== //
+      appBar: AppBar(
+        backgroundColor: color_constants.seconday,
+        title: Text(
+          'Person List Screen',
+          style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+        ),
+      ),
+
       body: RefreshIndicator(
         backgroundColor: color_constants.background,
         color: color_constants.primary,
@@ -87,7 +101,7 @@ class _MobilePersonListState extends ConsumerState<MobilePersonListScreen> {
                     style: Theme.of(context).textTheme.labelLarge!.copyWith(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: color_constants.mainText,
                         ),
                   ),
 
