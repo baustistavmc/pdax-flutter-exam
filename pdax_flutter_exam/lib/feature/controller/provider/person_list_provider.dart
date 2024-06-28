@@ -41,3 +41,16 @@ class Counter extends _$Counter {
     state += 1;
   }
 }
+
+// ==================== Person Details Provider ==================== //
+@Riverpod(keepAlive: true)
+class PersonDetails extends _$PersonDetails {
+  @override
+  Datum? build() {
+    return null;
+  }
+
+  Future<void> setValue(Datum datum) async {
+    state = datum;
+  }
+}
