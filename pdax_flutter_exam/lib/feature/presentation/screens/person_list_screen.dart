@@ -19,6 +19,6 @@ class PersonListScreen extends ConsumerWidget {
       return const DesktopPersonListScreen();
     }
 
-    return const MobilePersonListScreen();
+    return const DesktopPersonListScreen();
   }
 }
