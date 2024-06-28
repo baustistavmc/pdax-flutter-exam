@@ -1,16 +1,26 @@
-# pdax_flutter_exam
+# PDAX Flutter Exam
+- Vincent Matthew Bautista | bautistavmc@gmail.com
 
-A new Flutter project.
+## Steps to run the Application:
 
-## Getting Started
+1. Clone the Respository:
+```
+$ git clone https://github.com/baustistavmc/pdax-flutter-exam
+```
 
-This project is a starting point for a Flutter application.
+2. Run flutter clean
+```
 
-A few resources to get you started if this is your first Flutter project:
+3. Run flutter pub get
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+4. Run the application, flutter run
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Additional Notes
+- State Manager: The application uses Flutter Riverpod for state management. For more details about Riverpod, kindly refer to the documentation. 
+
+- - - (https://riverpod.dev/docs/introduction/getting_started) - - -
+
+- Architecture: The project follows the MVC (Model-View-Controller) architecture pattern for consistent code organization.
+
