@@ -39,21 +39,22 @@ class DesktopPersonListWidget extends ConsumerWidget {
               if (index < person.length) {
                 final personData = person[index];
 
-                return InkWell(
-                  onTap: () async {
-                    // Store personData to personData Provider
-                    await ref
-                        .read(personDetailsProvider.notifier)
-                        .setValue(personData);
+                return Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 16.0,
+                  ),
+                  child: InkWell(
+                    hoverColor: color_constants.primary,
+                    onTap: () async {
+                      // Store personData to personData Provider
+                      await ref
+                          .read(personDetailsProvider.notifier)
+                          .setValue(personData);
 
-                    if (context.mounted) {
-                      context.pushNamed('PersonDetailsScreen');
-                    }
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      bottom: 16.0,
-                    ),
+                      if (context.mounted) {
+                        context.pushNamed('PersonDetailsScreen');
+                      }
+                    },
                     child: Container(
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(
@@ -68,75 +69,102 @@ class DesktopPersonListWidget extends ConsumerWidget {
                       //
                       // ========== Container Details ========== //
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          // =================== Image =================== //
-                          Flexible(
-                            child: SizedBox(
-                              height: 48,
-                              width: 48,
-                              child: ClipOval(
-                                child: Image.network(
-                                  personData.image!,
-                                  errorBuilder: (context, error, stackTrace) {
-                                    return Container(
-                                      decoration: const BoxDecoration(
-                                        color: color_constants.seconday,
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Center(
-                                        child: Text(
-                                          'Empty Image Link',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .labelLarge
-                                              ?.copyWith(
-                                                color: Colors.white,
-                                                fontSize: 9,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                          textAlign: TextAlign.center,
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-
-                          const SizedBox(width: 16),
-
-                          Flexible(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                          Expanded(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                // ========== Name ========== //
-                                Text(
-                                  '${personData.lastname!}, ${personData.firstname!}',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelLarge
-                                      ?.copyWith(
-                                        color: color_constants.mainText,
-                                        fontSize: 16,
+                                // =================== Image =================== //
+                                Flexible(
+                                  child: SizedBox(
+                                    height: 48,
+                                    width: 48,
+                                    child: ClipOval(
+                                      child: Image.network(
+                                        personData.image!,
+                                        errorBuilder:
+                                            (context, error, stackTrace) {
+                                          return Container(
+                                            decoration: const BoxDecoration(
+                                              color: color_constants.seconday,
+                                              shape: BoxShape.circle,
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Empty Image Link',
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelLarge
+                                                    ?.copyWith(
+                                                      color: Colors.white,
+                                                      fontSize: 9,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                textAlign: TextAlign.center,
+                                              ),
+                                            ),
+                                          );
+                                        },
                                       ),
+                                    ),
+                                  ),
                                 ),
-                                //
-                                // ========== Email ========== //
-                                Text(
-                                  personData.email!,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelLarge
-                                      ?.copyWith(
-                                        color: color_constants.mainText,
-                                        fontSize: 16,
+
+                                const SizedBox(width: 16),
+
+                                Flexible(
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      // ========== Name ========== //
+                                      Text(
+                                        '${personData.lastname!}, ${personData.firstname!}',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(
+                                              color: color_constants.mainText,
+                                              fontSize: 16,
+                                            ),
                                       ),
+                                      //
+                                      // ========== Email ========== //
+                                      Text(
+                                        personData.email!,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelLarge
+                                            ?.copyWith(
+                                              color: color_constants.mainText,
+                                              fontSize: 16,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
                           ),
+
+                          // =================== Arrow Icon =================== //
+                          IconButton(
+                            onPressed: () async {
+                              await ref
+                                  .read(personDetailsProvider.notifier)
+                                  .setValue(personData);
+
+                              if (context.mounted) {
+                                context.pushNamed('PersonDetailsScreen');
+                              }
+                            },
+                            icon: const Icon(
+                              size: 32,
+                              Icons.arrow_right,
+                              color: color_constants.primary,
+                            ),
+                          )
                         ],
                       ),
                     ),
