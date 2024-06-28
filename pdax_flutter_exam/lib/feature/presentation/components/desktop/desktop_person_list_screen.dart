@@ -18,31 +18,33 @@ class DesktopPersonListScreen extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(
             horizontal: 24,
           ),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 16),
 
-                // ================== Header ================== //
-                Text(
-                  'Person List',
-                  style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                        fontSize: 32,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+              // ================== Header ================== //
+              Text(
+                'Person List',
+                style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: color_constants.mainText,
+                    ),
+              ),
+
+              const SizedBox(height: 16),
+
+              // ================== Person List Widget ================== //
+
+              const Expanded(
+                child: SingleChildScrollView(
+                  child: DesktopPersonListWidget(),
                 ),
+              ),
 
-                const SizedBox(height: 16),
-
-                // ================== Person List Widget ================== //
-
-                const DesktopPersonListWidget(),
-
-                const SizedBox(height: 16),
-              ],
-            ),
+              const SizedBox(height: 16),
+            ],
           ),
         ),
       ),
