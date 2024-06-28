@@ -173,79 +173,79 @@ class DesktopPersonListWidget extends ConsumerWidget {
               } else {
                 // =================== Load Data or No More Data =================== //
                 return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 24),
-                    child: counter != 4
-                        ? Center(
-                            child: InkWell(
+                  padding: const EdgeInsets.symmetric(vertical: 24),
+                  child: counter != 4
+                      ? Center(
+                          child: InkWell(
+                            onTap: () async {
+                              await ref.read(counterProvider.notifier).add();
+
+                              await ref
+                                  .read(personListControllerProvider.notifier)
+                                  .fetchPersonList();
+                            },
+                            child: Container(
+                              width: 160,
+                              height: 40,
+                              decoration: BoxDecoration(
+                                color: color_constants.primary,
+                                borderRadius: BorderRadius.circular(6),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  'Load More',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineLarge
+                                      ?.copyWith(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'No more data Available',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelLarge
+                                  ?.copyWith(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: color_constants.mainText,
+                                  ),
+                            ),
+                            const SizedBox(width: 8),
+                            // ========== Reset Button ========== //
+                            InkWell(
                               onTap: () async {
-                                await ref.read(counterProvider.notifier).add();
+                                ref.invalidate(personListProvider);
+                                ref.invalidate(counterProvider);
+                                ref.invalidate(isFirstFetchProvider);
 
                                 await ref
                                     .read(personListControllerProvider.notifier)
                                     .fetchPersonList();
                               },
-                              child: Container(
-                                width: 160,
-                                height: 40,
-                                decoration: BoxDecoration(
-                                  color: color_constants.primary,
-                                  borderRadius: BorderRadius.circular(6),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    'Load More',
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .headlineLarge
-                                        ?.copyWith(
-                                          color: Colors.white,
-                                          fontSize: 16,
-                                        ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        : Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'No more data Available',
+                              child: Text(
+                                'reset list',
                                 style: Theme.of(context)
                                     .textTheme
                                     .labelLarge
                                     ?.copyWith(
                                       fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                      color: color_constants.mainText,
+                                      color: color_constants.subText,
                                     ),
                               ),
-                              const SizedBox(width: 8),
-                              // ========== Reset Button ========== //
-                              InkWell(
-                                onTap: () async {
-                                  ref.invalidate(personListProvider);
-                                  ref.invalidate(counterProvider);
-                                  ref.invalidate(isFirstFetchProvider);
-
-                                  await ref
-                                      .read(
-                                          personListControllerProvider.notifier)
-                                      .fetchPersonList();
-                                },
-                                child: Text(
-                                  'reset list',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .labelLarge
-                                      ?.copyWith(
-                                        fontSize: 16,
-                                        color: color_constants.subText,
-                                      ),
-                                ),
-                              ),
-                            ],
-                          ));
+                            ),
+                          ],
+                        ),
+                );
               }
             },
           )

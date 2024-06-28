@@ -39,8 +39,6 @@ class MobilePersonListWidget extends ConsumerWidget {
             shrinkWrap: true,
             itemCount: person.length + 1,
             itemBuilder: (context, index) {
-              debugPrint('Test length = ${person.length}');
-
               if (index < person.length) {
                 final personData = person[index];
 
