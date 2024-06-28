@@ -96,16 +96,16 @@ class _MobilePersonListState extends ConsumerState<MobilePersonListScreen> {
                   const SizedBox(height: 16),
 
                   // ================== Header ================== //
-                  Text(
-                    'Person List',
-                    style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                          color: color_constants.mainText,
-                        ),
-                  ),
+                  // Text(
+                  //   'Person List',
+                  //   style: Theme.of(context).textTheme.labelLarge!.copyWith(
+                  //         fontSize: 32,
+                  //         fontWeight: FontWeight.bold,
+                  //         color: color_constants.mainText,
+                  //       ),
+                  // ),
 
-                  const SizedBox(height: 16),
+                  // const SizedBox(height: 16),
 
                   // ================== Person List Widget ================== //
 
