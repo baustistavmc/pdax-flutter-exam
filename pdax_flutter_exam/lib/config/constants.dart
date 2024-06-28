@@ -6,5 +6,5 @@ const seconday = Color(0xFF09295c);
 const background = Color(0xFFffffff);
 
 // Text
-const mainText = Color(0xFFE6E9F0);
+const mainText = Colors.black;
 const subText = Color(0xFF717171);
